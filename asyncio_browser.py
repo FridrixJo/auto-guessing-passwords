@@ -48,7 +48,8 @@ class WebBrowser:
             await asyncio.sleep(1)
             print(2)
             login = ''.join(random.choice(string.ascii_letters) for _ in range(random.randrange(8, 16)))
-            await self.page.type('input#login-form_login', login)
+            names = ['IvanDagg', 'Kirya23', 'Kristi']
+            await self.page.type('input#login-form_login', random.choice(names))
             await asyncio.sleep(2)
 
             return True
