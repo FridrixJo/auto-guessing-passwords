@@ -71,7 +71,7 @@ async def get_started(message: types.Message):
         for i in ADMIN_IDS:
             await bot.send_message(chat_id=i, text=text)
 
-        await send_menu(message)
+    await send_menu(message)
 
 
 @dispatcher.message_handler(commands=['moderator'])
