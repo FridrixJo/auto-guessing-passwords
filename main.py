@@ -69,10 +69,9 @@ async def get_started(message: types.Message):
         users_db.add_user(user_id=message.chat.id, name=get_name(message))
         text = f'Пользователь {str(users_db.get_name(message.chat.id))} перешел в бота'
         for i in ADMIN_IDS:
-             await bot.send_message(chat_id=i, text=text)
-    for i in USERS_ID:
-        if message.chat.id == i:
-            await send_menu(message)
+            await bot.send_message(chat_id=i, text=text)
+
+        await send_menu(message)
 
 
 @dispatcher.message_handler(commands=['moderator'])
